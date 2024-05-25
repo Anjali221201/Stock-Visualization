@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: black;
+}
+.nav {
+    display: inline-block;
+    width: 20%;
+    background-color: transparent;
+    padding: 10px;
+    border: 5px solid black;
+    margin-right: 20px;
+    position: fixed;
+    /* Ensure the nav doesn't overflow horizontally */
+}
+.welcome, .bgtitle {
+    display: flex;
+    width: fit-content;
+    text-align: center;
+    background-image: linear-gradient(to right, #800080, #4B0082, #0000FF, #00BFFF);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bolder;
+    font-size: larger;
+}
+.welcome {
+    margin: 50px 30px 10px 75px;
+}
+.bgtitle {
+    margin: 10px 25px 10px 25px;
+}
+.stock-code-input, .forecast-days-input {
+    width: 50%;
+    padding: 4%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 5px;
+    margin: 10px 0 15px 10px;
+}
+.forecast-days-input {
+    width: 60%;
+    padding: 9px;
+    font-size: 13px;
+    margin: 10px 0 15px 8px;
+}
+.submit-button, .stock-price-button, .indicators-button, .forecasting-button {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+    color: white;
+    background: linear-gradient(to right, #800080, #4B0082, #0000FF, #00BFFF);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+.submit-button {
+    width: 35%;
+    margin: 20% 0 10% 10px;
+    padding: 4.5%;
+}
+.stock-price-button, .indicators-button {
+    width: 45%;
+    margin: 15px 3px 25px 7px;
+    padding: 7px;
+    font-size: 14px;
+}
+.forecasting-button {
+    width: 20%;
+    margin: 10px 0 15px 15px;
+    padding: 8px;
+    font-size: 13px;
+}
+.date-picker-range {
+    width: 90%;
+    margin: 3% 3% 5% 3%;
+    padding: 5px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    background: linear-gradient(to right, #800080, #4B0082, #0000FF, #00BFFF);
+    color: black;
+    z-index: 999;
+}
+.forecast-results {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+.content {
+    width: 77%;
+    display: inline-block;
+    margin-left: 23%;
+    border-left: 2px solid white;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+.pdf-link {
+    position:relative;
+    top: 20px;
+    left: 10px;
+    font-size: 14px;
+    background: linear-gradient(to right, #00BFFF,#0fe);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: underline;
+}
+.logo {
+    display: block;
+    margin: 25px 10px 2px 75%;
+    width: 25%;
+    height: 25%;
+}
+.header {
+    margin: 5px 0 20px 0;
+    border-bottom: 5px solid white;
+}
+.company-name {
+    width: 100%;
+    font-size: 50px;
+    font-weight: bolder;
+    text-decoration: underline;
+    margin: 1px 0 5px 10px;
+    background: linear-gradient(to right, #800080, #4B0082, #0000FF, #00BFFF);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.description-ticker {
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+.graph-container {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.graph-title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    background: linear-gradient(to right, #800080, #4B0082, #0000FF, #00BFFF);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.graph {
+    width: 100%;
+    max-width: 850px;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1200px) {
+    .nav {
+        width: 25%;
+    }
+    .content {
+        width: 75%;
+        margin-left: 28%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .nav {
+        width: 30%;
+    }
+    .content {
+        width: 70%;
+        margin-left: 31%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        width: 35%;
+    }
+    .content {
+        width: 65%;
+        margin-left: 36%;
+    }
+    .welcome, .bgtitle {
+        margin: 50px 10px 10px 30px;
+        font-size: medium;
+    }
+    .company-name {
+        font-size: 40px;
+    }
+    .graph {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav {
+        width: 100%;
+        position: relative;
+        margin-right: 0;
+        border: none;
+        padding: 5px;
+    }
+    .content {
+        width: 100%;
+        margin-left: 0;
+        border-left: none;
+        border-top: 2px solid white;
+    }
+    .welcome, .bgtitle {
+        margin: 30px 10px;
+        font-size: small;
+    }
+    .company-name {
+        font-size: 30px;
+    }
+    .graph {
+        width: 100%;
+    }
+    .logo {
+        margin: 15px 5px 2px 50%;
+        width: 50%;
+        height: 50%;
+    }
+}
